@@ -19,7 +19,6 @@ import { MoviesComponent } from './movies/movies.component';
 import { MoviesListComponent } from './movies/movies-list.component';
 import { MusicNavigatorComponent } from './music/music-navigator.component';
 
-//import { MoviesModule } from './movies/movies.module';
 import { BookComponent } from './book/book.component';
 import { GenericComponent } from './generic/generic.component';
 import { MusicListComponent } from './music/music-list.component';

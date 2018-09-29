@@ -29,8 +29,7 @@ export class AppComponent {
 
   ngOnInit() 
   {
-    //this.router.navigateByUrl('/dashboard');
-    //jQuery.$("#theCarousel").carousel();
+    this.router.navigateByUrl('/music/search');
   }   
               
 }
