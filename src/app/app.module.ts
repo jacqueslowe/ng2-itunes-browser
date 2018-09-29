@@ -32,11 +32,6 @@ import { NavBarComponent } from './nav-bar.component';
 import { ToastService } from './toast/toast.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { CardComponent } from './ui-tools/card.component';
-import { PanelComplexComponent } from './ui-tools/panel-complex.component';
-import { DashPinComponent } from './ui-tools/dash-pin.component';
-import { PercentRingComponent } from './ui-tools/percent-ring.component';
-
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/music', pathMatch: 'full' },
@@ -53,11 +48,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, PageNotFoundComponent,
-    CardComponent, DashPinComponent,
     MusicComponent,  MusicListComponent, MusicSearchComponent, TrackAddComponent, TrackDetailsComponent,MusicNavigatorComponent,
     MoviesComponent, MoviesListComponent, 
-    BookComponent, BookListComponent, PercentRingComponent,
-     PanelComplexComponent, 
+    BookComponent, BookListComponent, 
     GenericComponent, GenericListComponent,NavBarComponent],
   imports: [ 
     RouterModule.forRoot(appRoutes), ChartsModule,
