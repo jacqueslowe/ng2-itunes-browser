@@ -21,19 +21,19 @@ export class MusicNavigatorComponent {
     {
         if( this.router.url.indexOf("Search".toLowerCase()) != -1 )
         {
-            return "Search iTunes for Track";
+            return "Search iTunes for music";
         }
         else if( this.router.url.indexOf("Add".toLowerCase()) != -1 )
         {
-            return "Add a New music Track";
+            return "Add New music";
         }
         else if( this.router.url.indexOf("Details".toLowerCase()) != -1 )
         {
-            return "Details Track Info";
+            return "Details";
         }
         else
         {
-            return "Search, add and view details of music"
+            return "Search, add and view music details"
         }
     }
 }
