@@ -1,0 +1,14 @@
+<div class="movies-list fluid">
+    <div class="row">
+        <div  *ngIf="movies!=null && movies.length > 0">
+            <div *ngFor="let item of movies" class="box thumbnail col-sm-6 col-md-3 col-lg-2 book-caption">
+                <img [src]="item.artworkUrl100" class="thumbnail-image">
+                <div class="caption">
+                    <h3>{{item.trackName}}</h3>
+                    <p>Director: {{item.artistName}}.</p> 
+                    <p>{{item.longDescription}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

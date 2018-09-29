@@ -1,0 +1,35 @@
+ <div class="music-list">
+   <div *ngIf="musicTracks!=null && musicTracks.length > 0">
+    <div class="row">
+    <div class="example-card col-sm-6 col-md-3 col-lg-2" *ngFor="let item of musicTracks" (click)="playerService.play(item)">
+        <div>
+            <div class="example-header-image"></div>
+            <div>{{item.artistName}}</div>
+            <div>{{item.trackName}}</div>
+        <div>
+        <img [src]="item.artworkUrl100">
+        <div>
+            <p>
+            {{item.collectionName}}
+            </p>
+        </div>
+        <div>
+            <button md-button>Play</button>
+            <button md-button>Info</button>
+        </div>
+    </div>
+    </div>
+</div>
+    <!--Bad-->
+    <div *ngIf="musicTracks!=null && musicTracks.length == 0">
+        <h4>Sorry no results were found! for {{searchService.getSearchFilter()}}</h4>
+    </div>
+     <!--Ugly-->
+    <div *ngIf="errorMessage!=null">
+         <h4>Something went wrong!</h4>
+        <p>{{errorMessage}}</p>
+    </div>
+</div>
+
+
+ 

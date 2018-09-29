@@ -1,0 +1,30 @@
+.movies-list{
+  padding: 20px 20px 20px 10px;
+}
+.book-caption{
+  padding: 20px 20px 20px 20px;
+}
+.thumbnail {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: hidden;
+}
+.img-responsive {
+  margin-bottom: 20px;
+}
+.row{
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.box:hover{
+    opacity:1.0;
+}
+.box{
+    opacity:0.6;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}

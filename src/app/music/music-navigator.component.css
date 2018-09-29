@@ -1,0 +1,20 @@
+/*.nav-pills > li > a {
+    border-radius: 0 !important;
+}
+*/
+/*
+* {
+  border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+*/
+/*ul.nav-tabs li.active a{
+border-top: 3px solid #49c8ff;
+border-radius: 2px;
+}
+ul.nav-tabs li.active:hover a{
+    border-top: 3px solid #49c8ff;
+}
+ul.nav-tabs li a{
+    background-color: #eee;
+}*/

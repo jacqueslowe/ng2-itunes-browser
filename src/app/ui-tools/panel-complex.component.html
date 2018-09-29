@@ -1,0 +1,36 @@
+    <div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div id="card" class="weater">
+					<div class="city-selected">
+						<article (click)=toggleView()>
+							<div class="info">
+								<div class="temp">{{city.name}}</div>
+								<div *ngIf="visible===true" class="city">{{city.country}}</div>
+							</div>
+						</article>
+						<figure [style.background-image]="'url(' + city.imageUrl + ')'"></figure> 
+					</div>
+					<div *ngIf="visible===true" class="days">
+						<div class="row row-no-gutter">
+							<div class="col-md-4">
+								<div class="day">
+									<h1>History</h1>			
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="day">
+									<h1>Travel</h1>	
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="day">
+									<h1>Current</h1>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,22 @@
+<div class="generic-list">
+    <!--Good-->
+    <div *ngIf="items!=null && items.length > 0">
+        <ul class="list-group">
+            <li *ngFor="let item of items" class="list-group-item">
+                <img [src]="item.artworkUrl30">
+                <span class="badge">{{item.kind}}</span>
+                <p> {{item.artistName}} </p>
+                <code> {{item.trackName}}</code>
+            </li>
+        </ul>
+    </div>
+    <!--Bad-->
+    <div *ngIf="musicTracks!=null && musicTracks.length == 0">
+        <h4>Sorry no results were found! for {{searchService.getSearchFilter()}}</h4>
+    </div>
+     <!--Ugly-->
+    <div *ngIf="errorMessage!=null">
+         <h4>Something went wrong!</h4>
+        <p>{{errorMessage}}</p>
+    </div>
+</div>

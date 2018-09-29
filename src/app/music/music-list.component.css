@@ -1,0 +1,33 @@
+.example-card {
+  height: 200px;
+}
+.mat-card-image
+{
+  height: 100px;
+  width: 100px;
+}
+
+music-list{
+margin-top: 10 px;
+}
+.example-header-image {
+  background-size: cover;
+}
+.top-musicBITS{
+  padding: 30px 0px 30px 0px;
+}
+
+.top-albumBITS{
+  padding: 0px 0px 10px 0px;
+}
+.top-trackArtistBITS{
+  padding: 25px 0px 00px 0px;
+}
+
+.play {
+    opacity:0.05;
+    top:5px;
+    right:5px;
+    z-index:100;
+    position:absolute;
+}

@@ -1,0 +1,19 @@
+<div>
+    <ul class="nav nav-pills">
+        <li id="Search" #searchNav class={{isRouteActive(searchNav.id)}}>
+            <a [routerLink]="['/music/search']" data-toggle="tab">{{searchNav.id}}
+            <span fa-stack></span></a>
+        </li>
+        <li id="Add" #addNav class={{isRouteActive(addNav.id)}}>
+            <a [routerLink]="['/music/add']" data-toggle="tab">{{addNav.id}}</a>
+        </li>
+        <li id="Details" #viewNav class={{isRouteActive(viewNav.id)}}>
+            <a [routerLink]="['/music/details']" data-toggle="tab">{{viewNav.id}}</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <div class="panel panel-primary tab-content">
+        <div class="panel-heading">{{getActiveTitle()}}</div>
+    </div>
+</div>
