@@ -27,7 +27,8 @@ export class ItunesService {
             this.searchLimit;
 
         console.log('ItunesService.getItems(): ' + requestURL);
-        return this.httpClient.get(requestURL, { responseType: 'json' });
+        return this.httpClient.get<any>(requestURL)
+        .map(data => {return data.results});
     }
 
     getBooks(search: Search): Observable<any> {
@@ -37,7 +38,8 @@ export class ItunesService {
             this.searchLimit + '&media=ebook';
 
         console.log('ItunesService.getBooks(): ' + requestURL);
-        return this.httpClient.get(requestURL, { responseType: 'json' });
+        return this.httpClient.get<any>(requestURL)
+            .map(data => {return data.results});
     }
 
     getMovies(search: Search): Observable<any> {
@@ -49,7 +51,8 @@ export class ItunesService {
 
         console.log('ItunesService.getMovies(): ' + requestURL);
 
-        return this.httpClient.get(requestURL, { responseType: 'json' });
+        return this.httpClient.get<any>(requestURL)
+            .map(data => {return data.results});
     }
 
     getMusic(search: Search): Observable<any> {
@@ -59,7 +62,23 @@ export class ItunesService {
             this.searchLimit +
             this.searchMediaType + 'song';
 
-        console.log('ItunesService.getMusic(): ' + requestURL);
-        return this.httpClient.get(requestURL, { responseType: 'json' });
+            return this.httpClient.get<any>(requestURL)
+             .map(data => {return data.results});
+            
+/* return this.http.get(requestURL) 
+      .map(res => { 
+        return res.json().results.map(item => { 
+          return new SearchItem( 
+              item.trackName,
+              item.artistName,
+              item.trackViewUrl,
+              item.artworkUrl30,
+              item.artistId
+          );
+        });
+      });*/
+
+            //
+    
     }
 }

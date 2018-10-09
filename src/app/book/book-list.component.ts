@@ -48,7 +48,7 @@ export class BookListComponent implements OnInit {
                 this.itunesService.getBooks(
                     this.searchService.getSearch()
                 ).subscribe(
-                    books => { this.processSucessResponse(books.results); },
+                    books => { this.processSucessResponse(books); },
                     error => this.errorMessage = <any>error);
             }, 1500);
         }
