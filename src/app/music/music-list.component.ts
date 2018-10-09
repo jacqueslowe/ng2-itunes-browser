@@ -63,7 +63,7 @@ export class MusicListComponent {
                 this.itunesService.getMusic(
                     this.searchService.getSearch()
                 ).subscribe(
-                    music => { this.processSucessResponse(music); },
+                    music => { this.processSucessResponse(music.results); },
                     error => this.errorMessage = <any>error);
             }, 1500);
         }

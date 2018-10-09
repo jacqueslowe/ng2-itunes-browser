@@ -46,7 +46,7 @@ export class MoviesListComponent implements OnInit {
                 this.itunesService.getMovies(
                     this.searchService.getSearch()
                 ).subscribe(
-                    movies => { this.processSucessResponse(movies); },
+                    movies => { this.processSucessResponse(movies.results); },
                     error => this.errorMessage = <any>error);
             }, 1500);
         }

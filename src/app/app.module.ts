@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Constants } from './constants';
 import { AppComponent } from './app.component';
 import { SpinnerModule } from './spinner/spinner.module';
@@ -54,7 +54,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes), ChartsModule,
     BrowserAnimationsModule,
-    BrowserModule, FormsModule, HttpModule,
+    BrowserModule, FormsModule, HttpClientModule,
     SpinnerModule, ItunesModule, ToastModule, PlayerModule, SearchModule],
   exports: [
     SpinnerModule, ItunesModule, ToastModule, PlayerModule, SearchModule],

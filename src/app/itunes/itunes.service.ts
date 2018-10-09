@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -18,35 +18,29 @@ export class ItunesService {
     searchMediaType = '&entity=';
     searchLimit = '&limit=25';
 
-    constructor(private http: Http, private constants: Constants) { }
+    constructor(private httpClient: HttpClient, private constants: Constants) { }
 
-    getItems(search: Search): Observable<Object[]> {
+    getItems(search: Search): Observable<any> {
 
         const requestURL: string = this.constants.itunesUrl +
             this.searchTerm + search.searchChoice +
             this.searchLimit;
 
         console.log('ItunesService.getItems(): ' + requestURL);
-
-        return this.http.get(requestURL)
-            .map(res => this.extractData<Object[]>(res))
-            .catch(this.handleError);
+        return this.httpClient.get(requestURL, { responseType: 'json' });
     }
 
-    getBooks(search: Search): Observable<Book[]> {
+    getBooks(search: Search): Observable<any> {
 
         const requestURL: string = this.constants.itunesUrl +
             this.searchTerm + search.searchChoice +
             this.searchLimit + '&media=ebook';
 
         console.log('ItunesService.getBooks(): ' + requestURL);
-
-        return this.http.get(requestURL)
-            .map(res => this.extractData<Track[]>(res))
-            .catch(this.handleError);
+        return this.httpClient.get(requestURL, { responseType: 'json' });
     }
 
-    getMovies(search: Search): Observable<[Movie]> {
+    getMovies(search: Search): Observable<any> {
 
         const requestURL: string = this.constants.itunesUrl +
             this.searchTerm + search.searchChoice +
@@ -55,12 +49,10 @@ export class ItunesService {
 
         console.log('ItunesService.getMovies(): ' + requestURL);
 
-        return this.http.get(requestURL)
-            .map(res => this.extractData<Track[]>(res))
-            .catch(this.handleError);
+        return this.httpClient.get(requestURL, { responseType: 'json' });
     }
 
-    getMusic(search: Search): Observable<Track[]> {
+    getMusic(search: Search): Observable<any> {
 
         const requestURL: string = this.constants.itunesUrl +
             this.searchTerm + search.searchChoice +
@@ -68,28 +60,6 @@ export class ItunesService {
             this.searchMediaType + 'song';
 
         console.log('ItunesService.getMusic(): ' + requestURL);
-
-        return this.http.get(requestURL)
-            .map(res => this.extractData<Track[]>(res))
-            .catch(this.handleError);
-    }
-    private extractData<T>(res: Response) {
-        console.log('ItunesService.extractData(): ' + res.toString());
-        const body = res.json();
-        return body.results || {};
-    }
-
-    private handleError(error: Response | any) {
-        console.log('ItunesService.handleError(): ' + error.toString());
-        let errMsg: string;
-        if (error instanceof Response) {
-            const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-        } else {
-            errMsg = error.message ? error.message : error.toString();
-        }
-        console.error(errMsg);
-        return Observable.throw(errMsg);
+        return this.httpClient.get(requestURL, { responseType: 'json' });
     }
 }
