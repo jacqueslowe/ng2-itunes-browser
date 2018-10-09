@@ -13,7 +13,7 @@ import { AppComponent } from '../app.component';
 
 export class SearchComponent {
     @Input()
-    searchValue: string = 'unset';
+    searchValue = 'unset';
     self = this;
     constructor(
         private appComponent: AppComponent,
@@ -52,7 +52,7 @@ export class SearchComponent {
 
     searchClicked() {
         this.searchService.setSearchFilter(
-            this.searchValue, "music"
+            this.searchValue, 'music'
         );
         this.playerService.player.pause();
     }

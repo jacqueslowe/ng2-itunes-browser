@@ -30,24 +30,24 @@ export class MusicListComponent {
     ) {
         this.searchService.getStream().subscribe(
             (val) => { this.getMusic(); },
-            (err) => { console.log("MusicListComponent.SearchService.error", err) },
-            () => { console.log("MusicListComponent.SearchService.complete") }
+            (err) => { console.log('MusicListComponent.SearchService.error', err); },
+            () => { console.log('MusicListComponent.SearchService.complete'); }
         );
 
         this.playerService.getStream().subscribe(
             (val) => { this.playerStateChanged(); },
-            (err) => { console.log("MusicListComponent.playerService..subscribe.error", err) },
-            () => { console.log("MusicListComponent.playerService..subscribe.complete") }
+            (err) => { console.log('MusicListComponent.playerService..subscribe.error', err); },
+            () => { console.log('MusicListComponent.playerService..subscribe.complete'); }
         );
     }
 
     playerStateChanged() {
-        if (this.playerService.playerState === "ended") {
+        if (this.playerService.playerState === 'ended') {
             this.nextTrack();
         }
     }
     nextTrack() {
-        for (var i = 0; i < this.musicTracks.length; ++i) {
+        for (let i = 0; i < this.musicTracks.length; ++i) {
             if (this.musicTracks[i].trackId === this.playerService.selectedTrack.trackId) {
                 this.playerService.play(this.musicTracks[(i < this.musicTracks.length - 1) ? ++i : 0]);
             }
@@ -55,19 +55,15 @@ export class MusicListComponent {
     }
     getMusic() {
         this.spinnerService.show();
-        console.log("MusicListComponent.searchService.getSearchFilter()=" + this.searchService.getSearchFilter());
-        console.log("MusicListComponent.searchService.hasSearchFilter()=" + this.searchService.hasSearchFilter());
-        console.log("MusicListComponent.getMusic().searchParameter=" + this.searchParameter);
-
         this.musicTracks = null;
         this.errorMessage = null;
 
         if (this.searchService.hasSearchFilter() === true) {
-            let timeoutId = setTimeout(() => {
+            const timeoutId = setTimeout(() => {
                 this.itunesService.getMusic(
                     this.searchService.getSearch()
                 ).subscribe(
-                    music => { this.processSucessResponse(music) },
+                    music => { this.processSucessResponse(music); },
                     error => this.errorMessage = <any>error);
             }, 1500);
         }
@@ -75,6 +71,6 @@ export class MusicListComponent {
     processSucessResponse(music: Track[]) {
         this.musicTracks = music;
         this.spinnerService.hide();
-        this.toastService.success("iTunes returned " + this.musicTracks.length + " tracks!");
+        this.toastService.success('iTunes returned ' + this.musicTracks.length + ' tracks!');
     }
 }

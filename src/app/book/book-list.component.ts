@@ -14,7 +14,7 @@ import { ToastService } from '../toast/toast.service';
     styleUrls: ['./book-list.component.css']
 })
 
-export class BookListComponent implements OnInit{
+export class BookListComponent implements OnInit {
 
     books: Book[] = null;
     errorMessage = null;

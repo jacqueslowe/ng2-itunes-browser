@@ -23,20 +23,20 @@ export class GenericListComponent {
         private searchService: SearchService,
         private spinnerService: SpinnerService,
         private toastService: ToastService) {
-        console.log("GenericListComponent.SearchService - ctor");
+
         this.searchService.getStream().subscribe(
             (val) => { this.getItems(); },
-            (err) => { console.log("GenericListComponent.SearchService.error()", err) },
-            () => { console.log("GenericListComponent.SearchService.complete") }
+            (err) => { console.log('GenericListComponent.SearchService.error()', err); },
+            () => { console.log('GenericListComponent.SearchService.complete'); }
         );
     }
 
     getItems() {
-        console.log("GenericListComponent.getItems()=" + this.searchService.getSearchFilter());
+        console.log('GenericListComponent.getItems()=' + this.searchService.getSearchFilter());
         this.items = null;
         this.errorMessage = null;
         if (this.searchService.hasSearchFilter() === true) {
-            let timeoutId = setTimeout(() => {
+            const timeoutId = setTimeout(() => {
                 this.itunesService.getItems(
                     this.searchService.getSearch()
                 ).subscribe(
@@ -49,6 +49,6 @@ export class GenericListComponent {
     processSucessResponse(items: Object[]) {
         this.items = items;
         this.spinnerService.hide();
-        this.toastService.success("iTunes returned " + this.items.length + " movies!");
+        this.toastService.success('iTunes returned " + this.items.length + " movies!');
     }
 }

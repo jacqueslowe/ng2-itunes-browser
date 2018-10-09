@@ -18,7 +18,7 @@ export class SearchService {
     getSearchFilter() { return this.searchFilter; }
     getSearchType() { return this.searchType; }
     getSearch() {
-        let searchObject = new Search();
+        const searchObject = new Search();
         searchObject.searchType = this.searchType;
         searchObject.searchChoice = this.searchFilter;
         return searchObject;

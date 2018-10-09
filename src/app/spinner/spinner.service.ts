@@ -13,16 +13,15 @@ export class SpinnerService {
 
   constructor(@Optional() @SkipSelf() prior: SpinnerService) {
     if (prior) { return prior; }
-    console.log("SpinnerService ctor")
   }
 
-    show() {
-       // console.log("SpinnerService.show()");
-        this.spinnerSubject.next(<SpinnerState>{ show: true });
-    }
+  show() {
 
-    hide() {
-        //console.log("SpinnerService.hide()");
-        this.spinnerSubject.next(<SpinnerState>{ show: false });
-    }
+    this.spinnerSubject.next(<SpinnerState>{ show: true });
+  }
+
+  hide() {
+
+    this.spinnerSubject.next(<SpinnerState>{ show: false });
+  }
 }
