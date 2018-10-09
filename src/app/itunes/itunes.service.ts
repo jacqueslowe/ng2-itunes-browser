@@ -8,6 +8,7 @@ import { Search } from '../search/search.model';
 import { Track } from '../Music/track.model';
 import { Movie } from '../movies/movie.model';
 import { Book } from '../book/book.model';
+import { CATCH_STACK_VAR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
 export class ItunesService {
@@ -55,30 +56,27 @@ export class ItunesService {
             .map(data => {return data.results});
     }
 
-    getMusic(search: Search): Observable<any> {
+    getMusic(search: Search): Observable<Track[]> {
 
         const requestURL: string = this.constants.itunesUrl +
-            this.searchTerm + search.searchChoice +
+            this.searchTerm + 
+            search.searchChoice +
             this.searchLimit +
             this.searchMediaType + 'song';
 
-            return this.httpClient.get<any>(requestURL)
-             .map(data => {return data.results});
-            
-/* return this.http.get(requestURL) 
-      .map(res => { 
-        return res.json().results.map(item => { 
-          return new SearchItem( 
-              item.trackName,
-              item.artistName,
-              item.trackViewUrl,
-              item.artworkUrl30,
-              item.artistId
-          );
+        return this.httpClient.get<any>(requestURL)
+            .map(data => {
+                return data.results.map(item => { 
+                    let track:Track = new Track(); 
+                    track.trackName = item.trackName;
+                    track.artistName = item.artistName;
+                    track.artworkUrl30 = item.artworkUrl30;
+                    track.artworkUrl100 = item.artworkUrl100;
+                    track.trackId = item.trackId;
+                    track.previewUrl = item.previewUrl;
+                    return track;
+            });
         });
-      });*/
-
-            //
     
     }
 }

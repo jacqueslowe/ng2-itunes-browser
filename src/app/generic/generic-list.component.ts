@@ -40,7 +40,7 @@ export class GenericListComponent {
                 this.itunesService.getItems(
                     this.searchService.getSearch()
                 ).subscribe(
-                    items => { this.processSucessResponse(items.results); },
+                    items => { this.processSucessResponse(items); },
                     error => this.errorMessage = <any>error);
             }, 1500);
         }

@@ -5,4 +5,6 @@ export class Track {
     artistName: string;
     trackName: string;
     grenre: string;
+    artworkUrl100: string;
+    previewUrl:string;
 }
