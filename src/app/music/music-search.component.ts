@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'music-search',
+  selector: 'app-music-search',
   templateUrl: './music-search.component.html'
 })
 

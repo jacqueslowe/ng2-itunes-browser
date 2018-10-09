@@ -9,7 +9,7 @@ import { AppComponent } from '../app.component';
 
 @Component({
     moduleId: module.id,
-    selector: 'movies-list',
+    selector: 'app-movies-list',
     templateUrl: './movies-list.component.html',
     styleUrls: ['./movies-list.component.css']
 })

@@ -9,7 +9,7 @@ import { ToastService } from '../toast/toast.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'book-list',
+    selector: 'app-book-list',
     templateUrl: './book-list.component.html',
     styleUrls: ['./book-list.component.css']
 })

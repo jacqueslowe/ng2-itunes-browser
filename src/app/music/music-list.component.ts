@@ -9,7 +9,7 @@ import { AppComponent } from '../app.component';
 
 @Component({
     moduleId: module.id,
-    selector: 'music-list',
+    selector: 'app-music-list',
     templateUrl: './music-list.component.html',
     styleUrls: ['./music-list.component.css']
 })

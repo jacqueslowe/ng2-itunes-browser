@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'error404-component',
+  selector: 'app-error404-component',
   template: `
     <article class="template animated slideInRight">
       <h4>Page Not Found!</h4>

@@ -3,7 +3,7 @@ import { Constants } from './constants';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'nav-bar',
+  selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html'
 })
 

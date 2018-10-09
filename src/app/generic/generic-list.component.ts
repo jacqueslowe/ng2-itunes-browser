@@ -7,7 +7,7 @@ import { ToastService } from '../toast/toast.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'generic-list',
+    selector: 'app-generic-list',
     templateUrl: './generic-list.component.html',
     styleUrls: ['./generic-list.component.css']
 })

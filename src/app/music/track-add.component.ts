@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { SpinnerService } from '../spinner/spinner.service';
 
 @Component({
-  selector: 'track-add',
+  selector: 'app-track-add',
   templateUrl: './track-add.component.html',
   styles: [`
     form { margin-top: 10px; }

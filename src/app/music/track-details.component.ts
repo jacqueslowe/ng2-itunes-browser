@@ -5,7 +5,7 @@ import { Track } from './track.model';
 import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'track-details',
+  selector: 'app-track-details',
   templateUrl: './track-details.component.html',
   styles: [`
     form { margin-top: 10px; }

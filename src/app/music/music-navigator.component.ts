@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
     moduleId: module.id,
-    selector: 'music-navigator',
+    selector: 'app-music-navigator',
     templateUrl: './music-navigator.component.html',
     styleUrls: ['./music-navigator.component.css']
 })
