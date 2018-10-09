@@ -29,7 +29,7 @@ export class ItunesService {
 
         console.log('ItunesService.getItems(): ' + requestURL);
         return this.httpClient.get<any>(requestURL)
-        .map(data => {return data.results});
+            .map(data => data.results);
     }
 
     getBooks(search: Search): Observable<any> {
@@ -40,7 +40,7 @@ export class ItunesService {
 
         console.log('ItunesService.getBooks(): ' + requestURL);
         return this.httpClient.get<any>(requestURL)
-            .map(data => {return data.results});
+            .map(data => data.results);
     }
 
     getMovies(search: Search): Observable<any> {
@@ -53,30 +53,31 @@ export class ItunesService {
         console.log('ItunesService.getMovies(): ' + requestURL);
 
         return this.httpClient.get<any>(requestURL)
-            .map(data => {return data.results});
+            .map(data => data.results);
     }
 
     getMusic(search: Search): Observable<Track[]> {
 
         const requestURL: string = this.constants.itunesUrl +
-            this.searchTerm + 
+            this.searchTerm +
             search.searchChoice +
             this.searchLimit +
             this.searchMediaType + 'song';
 
         return this.httpClient.get<any>(requestURL)
             .map(data => {
-                return data.results.map(item => { 
-                    let track:Track = new Track(); 
-                    track.trackName = item.trackName;
-                    track.artistName = item.artistName;
-                    track.artworkUrl30 = item.artworkUrl30;
-                    track.artworkUrl100 = item.artworkUrl100;
-                    track.trackId = item.trackId;
-                    track.previewUrl = item.previewUrl;
-                    return track;
+                return data.results.map(item => {
+                    return new Track(
+                        item.trackId,
+                        item.kind,
+                        item.artistName,
+                        item.trackName,
+                        item.genre,
+                        item.artworkUrl30,
+                        item.artworkUrl100,
+                        item.previewUrl);
+                });
             });
-        });
-    
+
     }
 }
