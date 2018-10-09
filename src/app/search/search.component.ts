@@ -7,7 +7,7 @@ import { AppComponent } from '../app.component';
 
 @Component({
     moduleId: module.id,
-    selector: 'search',
+    selector: 'app-search',
     templateUrl: './search.component.html'
 })
 

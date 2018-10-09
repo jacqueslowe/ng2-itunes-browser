@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'book',
+  selector: 'app-book',
   templateUrl: './book.component.html'
 })
 

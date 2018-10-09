@@ -1,6 +1,5 @@
 <div class="col-xs-4">
     <div class="input-group">
-    <!--span class="input-group-addon">{{searchService.getSearchType()}}</span-->
     <input type="text" [value]="searchValue" class="form-control" (keyup)="onKey($event)" (keyup.enter)="searchClicked()">
     <span class="input-group-addon input-group-addon-remove">
         <span class="glyphicon glyphicon-remove" (click)="clearSearch()"></span>
