@@ -14,14 +14,14 @@ export class Constants {
 
   constructor() {
     this.itunesUrl = 'https://itunes.apple.com/search';
-    this.typeMusic = "music";
-    this.typeMovie = "movie";
-    this.typeBook = "book";
-    this.typeGeneric = "generic";
+    this.typeMusic = 'music';
+    this.typeMovie = 'movie';
+    this.typeBook = 'book';
+    this.typeGeneric = 'generic';
 
-    this.choiceMusic = "Air";
-    this.choiceMovie = "Marvel";
-    this.choiceBook = "Tolkien";
-    this.choiceGeneric = "hot";
+    this.choiceMusic = 'Air';
+    this.choiceMovie = 'Marvel';
+    this.choiceBook = 'Tolkien';
+    this.choiceGeneric = 'hot';
   }
 }

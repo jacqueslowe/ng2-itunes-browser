@@ -1,8 +1,8 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SpinnerComponent }   from './spinner.component';
-import { SpinnerService }   from './spinner.service';
+import { SpinnerComponent } from './spinner.component';
+import { SpinnerService } from './spinner.service';
 
 @NgModule({
   imports: [CommonModule],
@@ -11,6 +11,6 @@ import { SpinnerService }   from './spinner.service';
   providers: [SpinnerService]
 })
 export class SpinnerModule {
-  constructor( @Optional() @SkipSelf() parentModule: SpinnerModule) {
+  constructor(@Optional() @SkipSelf() parentModule: SpinnerModule) {
   }
 }

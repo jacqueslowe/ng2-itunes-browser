@@ -6,7 +6,7 @@ import { SpinnerState, SpinnerService } from './spinner.service';
 @Component({
   moduleId: module.id,
   selector: 'spinner-component',
-   templateUrl: './spinner.component.html',
+  templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css']
 })
 export class SpinnerComponent implements OnDestroy, OnInit {
@@ -18,7 +18,7 @@ export class SpinnerComponent implements OnDestroy, OnInit {
 
   ngOnInit() {
     this.spinnerStateChanged = this.spinnerService.spinnerState
-      .subscribe((state: SpinnerState) =>{ this.visible = state.show});
+      .subscribe((state: SpinnerState) => { this.visible = state.show });
   }
 
 

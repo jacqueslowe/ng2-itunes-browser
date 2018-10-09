@@ -32,7 +32,9 @@ export class SearchService {
         this.searchChanged(this.searchFilter);
     }
 
-    hasSearchFilter() { return (this.searchFilter != null && this.searchFilter.length > 0) ? true : false }
+    hasSearchFilter() {
+        return (this.searchFilter != null && this.searchFilter.length > 0) ? true : false;
+    }
 
     getStream() {
         return this.stream$;

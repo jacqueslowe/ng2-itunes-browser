@@ -14,7 +14,7 @@ import { ToastService } from '../toast/toast.service';
     styleUrls: ['./book-list.component.css']
 })
 
-export class BookListComponent {
+export class BookListComponent implements OnInit{
 
     books: Book[] = null;
     errorMessage = null;
@@ -25,26 +25,26 @@ export class BookListComponent {
         private searchService: SearchService,
         private spinnerService: SpinnerService,
         private toastService: ToastService) {
-        console.log("BookListComponent.SearchService - ctor");
+
         this.searchService.getStream().subscribe(
             (val) => {
-                console.log("BookListComponent.SearchService new Filter=", val);
+                console.log('BookListComponent.SearchService new Filter=', val);
                 this.getBooks();
             },
-            (err) => { console.log("BookListComponent.SearchService.error()", err) },
-            () => { console.log("BookListComponent.SearchService.completed") }
+            (err) => { console.log('BookListComponent.SearchService.error()', err); },
+            () => { console.log('BookListComponent.SearchService.completed'); }
         );
     }
     ngOnInit() {
-        this.searchService.setSearchType("movies");
+        this.searchService.setSearchType('movies');
     }
 
     getBooks() {
-        console.log("BookListComponent.getBooks()=" + this.searchService.getSearchFilter());
+        console.log('BookListComponent.getBooks()=' + this.searchService.getSearchFilter());
         this.books = null;
         this.errorMessage = null;
         if (this.searchService.hasSearchFilter() === true) {
-            let timeoutId = setTimeout(() => {
+            const timeoutId = setTimeout(() => {
                 this.itunesService.getBooks(
                     this.searchService.getSearch()
                 ).subscribe(
@@ -56,6 +56,6 @@ export class BookListComponent {
     processSucessResponse(books: Book[]) {
         this.books = books;
         this.spinnerService.hide();
-        this.toastService.success("iTunes returned " + this.books.length + " books!");
+        this.toastService.success('iTunes returned " + this.books.length + " books!');
     }
 }
