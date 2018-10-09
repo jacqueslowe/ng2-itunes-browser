@@ -1,18 +1,18 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
-export class Constants{
+export class Constants {
   itunesUrl: string;
   typeMusic: string;
   typeMovie: string;
   typeBook: string;
   typeGeneric: string;
-  choiceMusic: string; 
-  choiceMovie: string; 
-  choiceBook: string; 
-  choiceGeneric: string; 
+  choiceMusic: string;
+  choiceMovie: string;
+  choiceBook: string;
+  choiceGeneric: string;
 
-  constructor(){
+  constructor() {
     this.itunesUrl = 'https://itunes.apple.com/search';
     this.typeMusic = "music";
     this.typeMovie = "movie";

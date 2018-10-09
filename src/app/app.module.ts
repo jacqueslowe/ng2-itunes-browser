@@ -10,11 +10,11 @@ import { ItunesModule } from './itunes/itunes.module';
 
 import { PlayerModule } from './player/player.module';
 import { SearchModule } from './search/search.module';
-import { MusicComponent }      from './music/music.component';
-import { TrackAddComponent }      from './music/track-add.component';
-import { TrackDetailsComponent }      from './music/track-details.component';
+import { MusicComponent } from './music/music.component';
+import { TrackAddComponent } from './music/track-add.component';
+import { TrackDetailsComponent } from './music/track-details.component';
 
-import { MusicSearchComponent }      from './music/music-search.component';
+import { MusicSearchComponent } from './music/music-search.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesListComponent } from './movies/movies-list.component';
 import { MusicNavigatorComponent } from './music/music-navigator.component';
@@ -47,18 +47,18 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, PageNotFoundComponent,
-    MusicComponent,  MusicListComponent, MusicSearchComponent, TrackAddComponent, TrackDetailsComponent,MusicNavigatorComponent,
-    MoviesComponent, MoviesListComponent, 
-    BookComponent, BookListComponent, 
-    GenericComponent, GenericListComponent,NavBarComponent],
-  imports: [ 
+    MusicComponent, MusicListComponent, MusicSearchComponent, TrackAddComponent, TrackDetailsComponent, MusicNavigatorComponent,
+    MoviesComponent, MoviesListComponent,
+    BookComponent, BookListComponent,
+    GenericComponent, GenericListComponent, NavBarComponent],
+  imports: [
     RouterModule.forRoot(appRoutes), ChartsModule,
     BrowserAnimationsModule,
-    BrowserModule, FormsModule, HttpModule, 
+    BrowserModule, FormsModule, HttpModule,
     SpinnerModule, ItunesModule, ToastModule, PlayerModule, SearchModule],
   exports: [
     SpinnerModule, ItunesModule, ToastModule, PlayerModule, SearchModule],
-  providers: [Constants,ToastService], 
+  providers: [Constants, ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

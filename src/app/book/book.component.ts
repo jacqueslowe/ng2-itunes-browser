@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class BookComponent {
-    constructor() {}
+  constructor() { }
 }

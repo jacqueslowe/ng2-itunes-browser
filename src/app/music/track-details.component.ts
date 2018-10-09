@@ -1,5 +1,5 @@
 
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Track } from './track.model';
 import { AppComponent } from '../app.component';
@@ -17,8 +17,7 @@ import { AppComponent } from '../app.component';
 })
 
 export class TrackDetailsComponent {
-    track: any =  new Object();
-    constructor( )
-    {
-    }
+  track: any = new Object();
+  constructor() {
+  }
 }
