@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Form } from '@angular/forms';
-import { Track } from './track.model';
+import { Track } from '../models/track.model';
 import { AppComponent } from '../app.component';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';

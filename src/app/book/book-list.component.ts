@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItunesService } from '../itunes/itunes.service';
-import { Book } from '../book/book.model';
+import { Book } from '../models/book.model';
 import { PlayerService } from '../player/player.service';
 import { SearchService } from '../search/search.service';
 import { AppComponent } from '../app.component';

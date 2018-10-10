@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItunesService } from '../itunes/itunes.service';
-import { Movie } from '../movies/movie.model';
+import { Movie } from '../models/movie.model';
 import { PlayerService } from '../player/player.service';
 import { SearchService } from '../search/search.service';
 import { SpinnerService } from '../spinner/spinner.service';

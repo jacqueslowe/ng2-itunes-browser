@@ -5,9 +5,9 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Constants } from '../constants';
 import { Search } from '../search/search.model';
-import { Track } from '../Music/track.model';
-import { Movie } from '../movies/movie.model';
-import { Book } from '../book/book.model';
+import { Track } from '../models/track.model';
+import { Movie } from '../models/movie.model';
+import { Book } from '../models/book.model';
 import { CATCH_STACK_VAR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
@@ -43,7 +43,7 @@ export class ItunesService {
             .map(data => data.results);
     }
 
-    getMovies(search: Search): Observable<any> {
+    getMovies(search: Search): Observable<Movie[]> {
 
         const requestURL: string = this.constants.itunesUrl +
             this.searchTerm + search.searchChoice +
@@ -51,9 +51,19 @@ export class ItunesService {
             this.searchMediaType + 'movie';
 
         console.log('ItunesService.getMovies(): ' + requestURL);
-
         return this.httpClient.get<any>(requestURL)
-            .map(data => data.results);
+            .map(data => {
+                return data.results.map(item => {
+                    return new Movie(
+                        item.trackId,
+                        item.artistName,
+                        item.trackName,
+                        item.longDescription,
+                        item.artworkUrl30,
+                        item.artworkUrl100,
+                        item.previewUrl);
+                });
+            });
     }
 
     getMusic(search: Search): Observable<Track[]> {
