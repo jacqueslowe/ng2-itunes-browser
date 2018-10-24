@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ItunesService } from '../itunes/itunes.service';
-import { Track } from '../Models/track.model';
+import { Track } from '../models/track.model';
 import { PlayerService } from '../player/player.service';
 import { SearchService } from '../search/search.service';
 import { SpinnerService } from '../spinner/spinner.service';
